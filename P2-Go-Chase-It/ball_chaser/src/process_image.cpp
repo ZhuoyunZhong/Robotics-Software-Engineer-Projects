@@ -19,22 +19,26 @@ public:
     }
     ~SubscribeAndClient() {}
 
-    // This callback function executes whenever a safe_move service is requested
-    void process_image_callback(const sensor_msgs::Image img) {
+    // This callback function executes when new image comes in
+    void process_image_callback(const sensor_msgs::Image img){
         // White ball color
         int white_pixel = 255;
         // Containers
         float lin_x = 0.0;
         float ang_z = 0.0;
-        float ball_pos = 0.0;
+        float ball_pos = 0.5;
 
         bool white_ball = false;
 
         // Loop through each pixel in the image and check if its equal to the first one
-        for (int i = 0; i < img.height * img.step; i++) {
-            ROS_INFO(img.data[i]);
-            if (img.data[i] - 255 != 0) {
+        for (int i = 0; i < img.height * img.step; i=i+3) {
+            if (img.data[i] == 255 && img.data[i+1] == 255 && img.data[i+2] == 255) {
+                ROS_INFO("Ball found");
                 white_ball = true;
+
+                // Calculate where the ball is
+                ball_pos = (i % img.step) / float(img.step);
+
                 break;
             }
         }
@@ -42,13 +46,18 @@ public:
         // If the white ball is found
         if (white_ball == true) {
             lin_x = 1.0;
-            ang_z = 0.0;
+            if (ball_pos < 0.333) {
+                ang_z = 5;
+            }
+            else if (ball_pos > 0.667) {
+                ang_z = -5;
+            }
         }
         move_robot(lin_x, ang_z);
     }
 
+    // Move the robot
     void move_robot(float lin_x, float ang_z) {
-        ROS_INFO_STREAM("Moving the robot");
 
         // Request centered joint angles [1.57, 1.57]
         ball_chaser::DriveToTarget srv;
