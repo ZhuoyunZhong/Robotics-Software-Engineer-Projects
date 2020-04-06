@@ -15,6 +15,8 @@ Built an apartment and generate two mobile robots in gazebo.
 <p align="center">
   		<img src="./demonstration/P1.png"/>
 </p>
+
+
 ### 2. [Go Chase It](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P2-Go-Chase-It)
 
 A two-wheel robot is built with laser and camera set up. The robot managed to chase a white ball in the environment built above.
