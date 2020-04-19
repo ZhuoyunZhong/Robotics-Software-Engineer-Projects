@@ -1,4 +1,6 @@
-# Robotics Software Engineer**
+# Robotics Software Engineer
+[![](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](http://www.udacity.com/robotics)
+
 *Udacity Robotics Software Engineer Nano Degree projects.*
 
 ## Currently finished projects:
