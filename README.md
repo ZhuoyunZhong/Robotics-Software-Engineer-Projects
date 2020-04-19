@@ -4,6 +4,7 @@
 ## Currently finished projects:
 - 1, Build My World
 - 2, Go Chase It
+- 2, Where Am I
 
 ## Demonstration
 
@@ -28,9 +29,12 @@ A two-wheel robot is built with laser and camera set up. The robot managed to ch
   		<img src="./demonstration/P2.gif"/>
     </a>
 </p>
+
+
 ### 3. [Where Am I](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P3-Where-Am-I)
 
 A two-wheel robot is built with laser and camera set up. The robot tried to localize itself in the apartment with Monte Carlo Localization (MCL) algorithm, also known as particle filter.
+
 
 #### Video demonstration:
 
