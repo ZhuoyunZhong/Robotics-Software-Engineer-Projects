@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot>
+
+  <!-- For gazebo colors -->
+  <gazebo reference="chassis">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+</robot>
