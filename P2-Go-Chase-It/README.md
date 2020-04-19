@@ -59,6 +59,6 @@ P2-Go-Chase-It                     # Go Chase It Project
 │   ├── CMakeLists.txt             # compiler instructions
 │   ├── package.xml                # package info  
 ├── demonstration                  # Demonstrate file for README 
-│   ├── chase.png
+│   ├── p2.gif
 └── README.md                      # Readme file                                          
 ```

@@ -6,13 +6,13 @@
 
 ### Video demonstration
 
- [![Video demonstration](./demonstration/P3.gif)](https://youtu.be/?)
+ [![Video demonstration](./demonstration/P3.gif)](https://youtu.be/xvVt7t_Lbuo)
 
 ## Overview
 
-This project is to localize a robot in an environment using Monte Carlo Localization (MCL), also known as particle filter.
+This project is to localize a robot in an environment using Monte Carlo Localization (MCL), also known as particle filter. The project used [pgm_map_creator](https://github.com/hyfan1116/pgm_map_creator) to create a map from gazebo world, and then localize the robot with [amcl](http://wiki.ros.org/amcl#Parameters) provided by ROS.
 
-## Build Instruction
+## Run Instruction
 
 To build the scripts
 
@@ -24,20 +24,29 @@ $ catkin_make
 Launch the world file and scripts in Gazebo
 
 ```
-$ roslaunch my_robot world.launch
-$ roslaunch ball_chaser ball_chaser.launch
+$ roslaunch mcl_robot world.launch
+$ roslaunch mcl_robot amcl.launch
 ```
 
-Move the white ball so that the robot can see it. The robot will automatically follow the ball.
+In Rviz, you could move and localize the robot in two methods.
+
+**Option I**: Using navigation tool from Rviz. Click the `2D Nav Goal` button and then click a location in the map. The robot should be able to navigate to the desired location.
+
+**Option I**: Using `teleop` node to manually control the vehicle. Run
+
+`rosrun teleop_twist_keyboard teleop_twist_keyboard.py`.
+
+One could control the vehicle following the instruction.
 
 ## Directory Structure
 
 ```
-P2-Go-Chase-It                     # Go Chase It Project
-├── my_robot                       # my_robot package                   
+P3-Where-Am-I                      # Where am I Project
+├── mcl_robot                      # my_robot package                   
 │   ├── launch                     # launch folder for launch files   
 │   │   ├── robot_description.launch
 │   │   ├── world.launch
+│   │   ├── amcl.launch
 │   ├── meshes                     # meshes folder for sensors
 │   │   ├── hokuyo.dae
 │   ├── urdf                       # urdf folder for xarco files
@@ -46,19 +55,14 @@ P2-Go-Chase-It                     # Go Chase It Project
 |   |   ├── materials.xacro
 │   ├── world                      # world folder for world files
 │   │   ├── apartment.world
+│   ├── maps                       # maps of the world
+│   │   ├── apartment.pgm
+│   │   ├── apartment.yaml
+│   ├── configs                    # navigation configurations
+│   │   ├── ...
 │   ├── CMakeLists.txt             # compiler instructions
-│   ├── package.xml                # package info
-├── ball_chaser                    # ball_chaser package                   
-│   ├── launch                     # launch folder for launch files   
-│   │   ├── ball_chaser.launch
-│   ├── src                        # source folder for C++ scripts
-│   │   ├── drive_bot.cpp
-│   │   ├── process_images.cpp
-│   ├── srv                        # service folder for ROS services
-│   │   ├── DriveToTarget.srv
-│   ├── CMakeLists.txt             # compiler instructions
-│   ├── package.xml                # package info  
+│   ├── package.xml                # package info 
 ├── demonstration                  # Demonstrate file for README 
-│   ├── chase.png
+│   ├── p3.gif
 └── README.md                      # Readme file                                          
 ```
