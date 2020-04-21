@@ -1,7 +1,5 @@
 <sdf version='1.6'>
   <world name='default'>
-    <mu1>10.0</mu1>
-    <mu2>10.0</mu2>
     <plugin name='hello' filename='libwelcome_message.so'/>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
