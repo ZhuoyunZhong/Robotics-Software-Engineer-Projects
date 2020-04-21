@@ -1,9 +1,12 @@
 #!/bin/sh
 
-xterm  -e  " gazebo " &
+xterm  -e  "roslaunch turtlebot3_world turtlebot3_world.launch" &
 sleep 3
 
-xterm  -e  " source /opt/ros/kinetic/setup.bash; roscore" & 
+xterm  -e  "rosrun gmapping slam_gmapping" & 
 sleep 3
 
-xterm  -e  " rosrun rviz rviz" 
+xterm  -e  "rosrun turtlebot3_teleop turtlebot3_teleop_key" &
+sleep 3
+
+xterm -e "roslaunch turtlebot3_world amcl.launch" 

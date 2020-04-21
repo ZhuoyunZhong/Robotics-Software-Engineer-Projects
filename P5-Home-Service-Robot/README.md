@@ -12,7 +12,13 @@
 
 This project is to 
 
+Platform:
+Ubuntu 18 + ROS melodic
+
 ## Run Instruction
+Prerequisite
+Install these packages:
+[Gmapping](http://wiki.ros.org/gmapping), [turtlebot3](http://wiki.ros.org/turtlebot3?distro=melodic)
 
 To build the scripts
 
@@ -42,24 +48,28 @@ turtlebot                     		# keyboard_teleop.launch file
 turtlebot_interactions         		# view_navigation.launch file      
 ├── turtlebot_rviz_launchers
 ├── ...
-turtlebot_simulator           		# turtlebot_world.launch file 
-├── turtlebot_gazebo
-└── ...
 |
 |
 P5-Home-Service-Robot     		    # This package
-├── map                             # map files
-|   ├── ...
 ├── scripts                   		# shell scripts files
-|   ├── ...
-├── rvizConfig                      # rviz configuration files
-|   ├── ...
+|   ├── launch.sh
 ├── pick_objects                    # pick_objects C++ node
 |   ├── src/pick_objects.cpp
-│   ├── ...
+│   ├── CMakeLists.txt
+│   ├── package.xml
 ├── add_markers                     # add_marker C++ node
 │   ├── src/add_markers.cpp
-│   ├── ...
+│   ├── CMakeLists.txt
+│   ├── package.xml
+├── turtlebot3_world                # turtlebot3 world
+│   ├── rvizConfig                  # Rviz config
+│   |   ├── turtlebot.rviz
+│   ├── worlds                      # World urdf
+│   |   ├── apartment.world
+│   ├── launch                      # World launch
+│   |   ├── turtlebot3_world.launch
+│   ├── CMakeLists.txt
+│   ├── package.xml
 ├── demonstration             		# Demonstrate file for README 
 ├── ├── p3.gif
 └── README.md                  		# Readme file                                          
