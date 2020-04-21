@@ -1,0 +1,38 @@
+<launch>
+
+  <!-- Map Server -->
+  <arg name="map_file" default="$(find turtlebot3_world)/worlds/apartment.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL Node -->
+  <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <!-- <remap from="scan" to="/turtlebot3_burger/laser/scan"/> -->
+    
+    <!-- Filter -->
+    <param name="min_particles" value="20"/>
+    <param name="max_particles" value="200"/>
+    <param name="update_min_a" value="0.1"/>
+    <param name="update_min_d" value="0.25"/>
+    <!-- Laser -->
+    <!-- Odometry -->
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff-corrected"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="global_frame_id" value="map"/>
+  </node>
+
+  <!-- Move Base -->
+  <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
+    <!-- <remap from="scan" to="/turtlebot3_burger/laser/scan"/> -->
+
+    <param name="base_global_planner" value="navfn/NavfnROS" />
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+
+    <rosparam file="$(find turtlebot3_world)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find turtlebot3_world)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find turtlebot3_world)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find turtlebot3_world)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find turtlebot3_world)/config/base_local_planner_params.yaml" command="load" />
+  </node>
+
+</launch>
