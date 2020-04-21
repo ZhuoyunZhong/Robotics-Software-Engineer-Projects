@@ -6,6 +6,7 @@
 
   <!-- AMCL Node -->
   <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <!-- <remap from="scan" to="/turtlebot3_burger/laser/scan"/> -->
 
     <!-- Filter -->
     <param name="min_particles" value="20"/>
