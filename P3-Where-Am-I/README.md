@@ -55,6 +55,7 @@ P3-Where-Am-I                      # Where am I Project
 |   |   ├── materials.xacro
 │   ├── world                      # world folder for world files
 │   │   ├── apartment.world
+│   │   ├── apartment.rviz
 │   ├── maps                       # maps of the world
 │   │   ├── apartment.pgm
 │   │   ├── apartment.yaml

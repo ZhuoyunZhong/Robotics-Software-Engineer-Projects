@@ -46,6 +46,7 @@ P2-Go-Chase-It                     # Go Chase It Project
 |   |   ├── materials.xacro
 │   ├── world                      # world folder for world files
 │   │   ├── apartment.world
+|   |   ├── apartment.rviz
 │   ├── CMakeLists.txt             # compiler instructions
 │   ├── package.xml                # package info
 ├── ball_chaser                    # ball_chaser package                   
