@@ -18,15 +18,11 @@
     <param name="odom_model_type" value="diff-corrected"/>
     <param name="base_frame_id" value="robot_footprint"/>
     <param name="global_frame_id" value="map"/>
-
-    <!-- If choose to define initial pose here -->
-    <param name="initial_pose_x" value="0"/>
-    <param name="initial_pose_y" value="0"/>
   </node>
 
   <!-- Move Base -->
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
-    <remap from="scan" to="/mcl_robot/laser/scan"/>
+    <!--<remap from="scan" to="/mcl_robot/laser/scan"/>-->
 
     <param name="base_global_planner" value="navfn/NavfnROS" />
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
