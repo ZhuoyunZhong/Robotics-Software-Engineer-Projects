@@ -24,13 +24,18 @@ int main( int argc, char** argv )
 {
     ros::init(argc, argv, "add_markers");
     ros::NodeHandle n;
-    ros::Subscriber reached_sub = n.subscribe("/reach_position", 1000, reach_callback);
+    ros::Subscriber reached_sub = n.subscribe("/reach_position", 10, reach_callback);
     ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
     // Set our initial shape type to be a cube
     uint32_t shape = visualization_msgs::Marker::CUBE;
 
-    while (ros::ok() && picked==false){
+    while (ros::ok()){
+        ros::spinOnce();
+        if (picked == true){
+            continue;
+        }
+        
         visualization_msgs::Marker marker;
         // Set the frame ID and timestamp.  See the TF tutorials for information on these.
         marker.header.frame_id = "map";
@@ -81,9 +86,6 @@ int main( int argc, char** argv )
             sleep(1);
         }
         marker_pub.publish(marker);
-        ros::spinOnce();
     }
-
-    ros::spin();
     return 0;
 }

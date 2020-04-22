@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- The drive_bot node -->
+  <node name="add_markers" type="add_markers" pkg="turtlebot3_command" output="screen">
+  </node>
+
+  <!-- The process_image node -->
+  <node name="pick_objects" type="pick_objects" pkg="turtlebot3_command" output="screen">
+  </node>
+
+</launch>
