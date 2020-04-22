@@ -6,7 +6,8 @@
 ## Currently finished projects:
 - 1, Build My World
 - 2, Go Chase It
-- 2, Where Am I
+- 3, Where Am I
+- 5, Home Service Robot
 
 ## Demonstration
 
@@ -43,6 +44,18 @@ A two-wheel robot is built with laser and camera set up. The robot tried to loca
 <p align="center">
     <a href="https://youtu.be/xvVt7t_Lbuo">
   		<img src="./demonstration/P3.gif"/>
+    </a>
+</p>
+### 5. [Home Service Robot](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P5-Home-Service-Robot)
+
+A two-wheel robot is built with laser and camera set up. The robot tried to localize itself in the apartment with Monte Carlo Localization (MCL) algorithm, also known as particle filter.
+
+
+#### Video demonstration:
+
+<p align="center">
+    <a href="https://youtu.be/-6iFxDoOUwM">
+  		<img src="./demonstration/P5.gif"/>
     </a>
 </p>
 

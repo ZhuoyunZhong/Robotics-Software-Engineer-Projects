@@ -6,7 +6,7 @@
 
 ### Video demonstration
 
- [![Video demonstration](./demonstration/P5.gif)](https://youtu.be/?)
+ [![Video demonstration](./demonstration/P5.gif)](https://youtu.be/-6iFxDoOUwM)
 
 ## Overview
 
@@ -17,8 +17,7 @@ Ubuntu 18 + ROS melodic
 
 ## Run Instruction
 Prerequisite
-Install these packages:
-[Gmapping](http://wiki.ros.org/gmapping), [turtlebot3](http://wiki.ros.org/turtlebot3?distro=melodic)
+Install packages [Gmapping](http://wiki.ros.org/gmapping), [turtlebot3](http://wiki.ros.org/turtlebot3?distro=melodic).
 
 To build the scripts
 
@@ -39,26 +38,30 @@ $ roslaunch mcl_robot amcl.launch
 ```
 # Official ROS packages
 |
-slam_gmapping               		# gmapping_demo.launch file                 
+amcl                                # localization and navigation
+├── ...
+slam_gmapping               		# slam                
 ├── gmapping
 ├── ...
-turtlebot                     		# keyboard_teleop.launch file
-├── turtlebot_teleop
-├── ...
-turtlebot_interactions         		# view_navigation.launch file      
-├── turtlebot_rviz_launchers
+turtlebot3                     		# turtlebot 3
+├── turtlebot_teleop                # keyboard_teleop file
+├── turtlebot_description           # turtlebot3 urdf
 ├── ...
 |
 |
 P5-Home-Service-Robot     		    # This package
 ├── scripts                   		# shell scripts files
-|   ├── launch.sh
-├── pick_objects                    # pick_objects C++ node
-|   ├── src/pick_objects.cpp
-│   ├── CMakeLists.txt
-│   ├── package.xml
-├── add_markers                     # add_marker C++ node
-│   ├── src/add_markers.cpp
+|   ├── home_service.sh
+|   ├── add_marker.sh
+|   ├── pick_objects.sh
+|   ├── test_slam.sh
+|   ├── test_navigation.sh
+├── turtlebot3_command              # home service code
+│   ├── launch                      # launch file
+│   |   ├── turtlebot3_command.launch
+|   ├── src
+│   |   ├── pick_objects.cpp
+│   |   ├── add_markers.cpp
 │   ├── CMakeLists.txt
 │   ├── package.xml
 ├── turtlebot3_world                # turtlebot3 world
@@ -71,7 +74,7 @@ P5-Home-Service-Robot     		    # This package
 │   ├── CMakeLists.txt
 │   ├── package.xml
 ├── demonstration             		# Demonstrate file for README 
-├── ├── p3.gif
+├── ├── p5.gif
 └── README.md                  		# Readme file                                          
 ```
 
