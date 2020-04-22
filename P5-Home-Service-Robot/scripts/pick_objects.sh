@@ -1,0 +1,1 @@
+xterm  -e  "rosrun turtlebot3_command pick_objects"
