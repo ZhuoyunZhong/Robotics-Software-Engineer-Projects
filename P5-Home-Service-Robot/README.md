@@ -10,14 +10,16 @@
 
 ## Overview
 
-This project is to 
-
-Platform:
-Ubuntu 18 + ROS melodic
+This project integrates mapping, localization and path planning to navigate the robot and implement a pick&drop task. The robot is spawned in an apartment, whose map was built using slam technique previously. The robot then uses laser scan to localize itself in the environment. Two goal poses are given for picking and dropping a certain object. The robot plans the path and navigate to the desired poses one after another in order to achieve the pick&drop task.
 
 ## Run Instruction
-Prerequisite
-Install packages [Gmapping](http://wiki.ros.org/gmapping), [turtlebot3](http://wiki.ros.org/turtlebot3?distro=melodic).
+#### Platform:
+
+Ubuntu 18 + ROS melodic
+
+#### Prerequisite
+
+Install ROS packages: [gmapping](http://wiki.ros.org/gmapping) and [turtlebot3](http://wiki.ros.org/turtlebot3?distro=melodic).
 
 To build the scripts
 
@@ -26,12 +28,48 @@ $ cd home/catkin_ws
 $ catkin_make
 ```
 
-Launch the world file and scripts in Gazebo
+#### Run
+
+Launch the home service robot
 
 ```
-$ roslaunch mcl_robot world.launch
-$ roslaunch mcl_robot amcl.launch
+$ cd catkin_ws/src/P5-Home-Service-Robot/scripts
+$ chmod +x home_service.sh
+$ ./home_service.sh
 ```
+
+## Project Detail
+
+#### Mapping
+
+```
+$ cd catkin_ws/src/P5-Home-Service-Robot/scripts
+$ chmod +x test_slam.sh
+$ ./test_slam.sh
+```
+
+The apartment's map is built with `gmapping` using slam technique. The robot was manually driven around the apartment with turtlebot3 keyboard controller `turtlebot3_teleop`. The resulting map `apartment.pgm` and `apartment.yaml` files are saved in `turtlebot3_world/worlds`.
+
+#### Localization and Navigation
+
+```
+$ cd catkin_ws/src/P5-Home-Service-Robot/scripts
+$ chmod +x test_navigation.sh
+$ ./test_navigation.sh
+```
+
+Loaded the map built from slam module, the robot then can use Monte Carlo Localization package `amcl` to localize itself in the apartment. `amcl` also provides the ability to navigate the robot to a certain desired pose with the help of `move_base`, which plans the path and controls the robot wheels' velocity.
+
+#### Home Service
+
+```
+$ cd catkin_ws/src/P5-Home-Service-Robot/scripts
+$ chmod +x add_marker.sh pick_objects.sh
+$ ./add_marker.sh
+$ ./pick_objects.sh
+```
+
+The final goal is to navigate robot to two desired location in order to achieve pick and drop task. The `add_marker.sh` can create a fake object box, once the robot picks it up, it will disappear and will appear when the robot reaches the drop goal. `pick_objects` sent desired pose to `amcl` so that the navigation module can plan the path and navigate the robot to the goals.
 
 ## Directory Structure
 
