@@ -3,10 +3,11 @@
 
 *Udacity Robotics Software Engineer Nano Degree projects.*
 
-## Currently finished projects:
+## Finished projects:
 - 1, Build My World
 - 2, Go Chase It
 - 3, Where Am I
+- 4, Map My World
 - 5, Home Service Robot
 
 ## Demonstration
@@ -47,10 +48,22 @@ A two-wheel robot is built with laser and camera set up. The robot tried to loca
     </a>
 </p>
 
+### 4. [Map My World](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P4-Map-My-World)
+
+
+
+
+#### Video demonstration:
+
+<p align="center">
+    <a href="https://youtu.be/">
+  		<img src="./demonstration/P4.gif"/>
+    </a>
+</p>
 
 ### 5. [Home Service Robot](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P5-Home-Service-Robot)
 
-A two-wheel robot is built with laser and camera set up. The robot tried to localize itself in the apartment with Monte Carlo Localization (MCL) algorithm, also known as particle filter.
+Combining all the modules mention above, this project map the apartment, localize itself in the environment, plan trajectories and navigate to the desired goals to achieve a pick & drop task.
 
 
 #### Video demonstration:
