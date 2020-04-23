@@ -3,9 +3,9 @@
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Import gazebo color -->
-  <xacro:include filename="$(find my_robot)/urdf/materials.xacro" />
+  <xacro:include filename="$(find slam_robot)/urdf/materials.xacro" />
   <!-- Import sensor plugins -->
-  <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
+  <xacro:include filename="$(find slam_robot)/urdf/my_robot.gazebo" />
 
 
   <link name="robot_footprint"></link>
