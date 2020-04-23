@@ -50,7 +50,7 @@ A two-wheel robot is built with laser and camera set up. The robot tried to loca
 
 ### 4. [Map My World](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P4-Map-My-World)
 
-
+This project created a 2D occupancy grid and 3D octomap from the apartment environment using the built robot with the RTAB-Map package.
 
 
 #### Video demonstration:
