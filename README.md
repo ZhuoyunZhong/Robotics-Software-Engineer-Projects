@@ -48,6 +48,7 @@ A two-wheel robot is built with laser and camera set up. The robot tried to loca
     </a>
 </p>
 
+
 ### 4. [Map My World](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P4-Map-My-World)
 
 This project created a 2D occupancy grid and 3D octomap from the apartment environment using the built robot with the RTAB-Map package.
@@ -56,10 +57,11 @@ This project created a 2D occupancy grid and 3D octomap from the apartment envir
 #### Video demonstration:
 
 <p align="center">
-    <a href="https://youtu.be/">
+    <a href="https://youtu.be/keG8e46t3KI">
   		<img src="./demonstration/P4.gif"/>
     </a>
 </p>
+
 
 ### 5. [Home Service Robot](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P5-Home-Service-Robot)
 

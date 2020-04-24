@@ -1,4 +1,4 @@
-# Where Am I
+# Map My World
 
 [![](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](http://www.udacity.com/robotics)
 
@@ -6,7 +6,7 @@
 
 ### Video demonstration
 
- [![Video demonstration](./demonstration/P4.gif)](https://youtu.be/)
+ [![Video demonstration](./demonstration/P4.gif)](https://youtu.be/keG8e46t3KI)
 
 ## OverviewSLAM
 
@@ -15,6 +15,12 @@ This project created a 2D occupancy grid and 3D octomap from the apartment envir
 ![SLAM](./demonstration/slam.png)
 
 ## Run Instruction
+
+If one does not have RTAB-Map package installed
+
+```
+$ sudo apt-get install ros-melodic-rtabmap-ros
+```
 
 To build the scripts
 
