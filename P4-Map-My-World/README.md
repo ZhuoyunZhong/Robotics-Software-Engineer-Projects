@@ -8,7 +8,7 @@
 
  [![Video demonstration](./demonstration/P4.gif)](https://youtu.be/keG8e46t3KI)
 
-## OverviewSLAM
+## Overview - SLAM
 
 This project created a 2D occupancy grid and 3D octomap from the apartment environment using the built robot with the [RTAB-Map](http://wiki.ros.org/rtabmap_ros) package. The robot had to move a few rounds around the environment in order to properly portray the environment. After creating the map, a `db` file was saved in the launch folder originally and was moved to the maps folder for future use.
 
