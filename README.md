@@ -57,10 +57,11 @@ This project created a 2D occupancy grid and 3D octomap from the apartment envir
 #### Video demonstration:
 
 <p align="center">
-    <a href="https://youtu.be/keG8e46t3KI">
+    <a href="https://youtu.be/0-CT9uMzt8s">
   		<img src="./demonstration/P4.gif"/>
     </a>
 </p>
+
 
 
 ### 5. [Home Service Robot](https://github.com/joeyzhong90595/Robotics-Software-Engineer-Projects/tree/master/P5-Home-Service-Robot)

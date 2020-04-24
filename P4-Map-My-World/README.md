@@ -6,13 +6,23 @@
 
 ### Video demonstration
 
- [![Video demonstration](./demonstration/P4.gif)](https://youtu.be/keG8e46t3KI)
+ [![Video demonstration](./demonstration/P4.gif)](https://youtu.be/0-CT9uMzt8s)
 
 ## Overview - SLAM
 
 This project created a 2D occupancy grid and 3D octomap from the apartment environment using the built robot with the [RTAB-Map](http://wiki.ros.org/rtabmap_ros) package. The robot had to move a few rounds around the environment in order to properly portray the environment. After creating the map, a `db` file was saved in the launch folder originally and was moved to the maps folder for future use.
 
-![SLAM](./demonstration/slam.png)
+**3D view of the map**
+
+![3D](./demonstration/3d_view.png)
+
+**Occupancy Grid**
+
+![grid](./demonstration/occupancy_grid.png)
+
+**Features**
+
+![features](./demonstration/features.png)
 
 ## Run Instruction
 
@@ -64,6 +74,8 @@ P4-Map-My-World                    # Map My World Project
 │   ├── package.xml                # package info 
 ├── demonstration                  # Demonstrate file for README 
 │   ├── p4.gif
-│   ├── slam.png
+│   ├── 3d_view.png
+│   ├── features.png
+│   ├── occupancy_grid.png
 └── README.md                      # Readme file                                          
 ```
